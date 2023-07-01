@@ -1,6 +1,6 @@
+import { UserRequest } from "../interfaces/UserRequest";
 import { Injectable } from "@nestjs/common";
 import { UserService } from "src/user/user.service";
-import { UserRequest } from "../interfaces/userRequest";
 import { JwtService } from "@nestjs/jwt";
 import { User } from "src/user/entity/user.entity";
 import { ConfigService } from "@nestjs/config";

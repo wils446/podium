@@ -9,7 +9,7 @@ import {
 } from "@nestjs/common";
 import { PostService } from "./post.service";
 import { CreatePostDto } from "./dtos/create-post.dto";
-import { GetUser } from "src/auth/decorator/getUser.decorator";
+import { GetUser } from "src/auth/decorator/GetUser.decorator";
 import { User } from "src/user/entity/user.entity";
 import { JwtGuard } from "src/guard";
 import { LikeService } from "src/like/like.service";

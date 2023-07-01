@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { OAuth2Client } from "google-auth-library";
-import { UserRequest } from "../interfaces/userRequest";
+import { UserRequest } from "../interfaces/UserRequest";
 import { AuthService } from "./auth.service";
 
 @Injectable()

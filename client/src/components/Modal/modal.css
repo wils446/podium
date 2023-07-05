@@ -1,0 +1,20 @@
+.content {
+	@apply bg-lightGrey;
+	@apply rounded-md;
+	@apply focus-visible:outline-none;
+	@apply py-3 px-2.5 sm:py-6 sm:px-5;
+	height: auto;
+	color: white;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

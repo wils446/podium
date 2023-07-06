@@ -8,7 +8,6 @@ export const useInitiateUser = () => {
 	const router = useRouter();
 
 	const initiateUser = () => {
-		console.log("function called");
 		const user = dispatch(userApi.endpoints.getMe.initiate(null));
 		user.unwrap()
 			.then(() => {

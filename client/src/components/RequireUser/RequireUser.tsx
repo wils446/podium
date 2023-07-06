@@ -2,7 +2,7 @@
 
 import { useInitiateUser } from "@/hooks/useInitiateUser";
 import { selectCurrentUserState } from "@/redux/features";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppSelector } from "@/redux/hooks";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { ColorRing } from "react-loader-spinner";
@@ -10,7 +10,6 @@ import { ColorRing } from "react-loader-spinner";
 export const RequireUser: React.FC<{ children: React.ReactNode }> = ({
 	children,
 }) => {
-	const dispatch = useAppDispatch();
 	const path = usePathname();
 	const { isLoading } = useAppSelector(selectCurrentUserState);
 	const { initiateUser } = useInitiateUser();

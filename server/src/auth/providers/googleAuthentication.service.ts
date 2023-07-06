@@ -17,7 +17,6 @@ export class GoogleAuthenticationService {
 		this.clientOAuth = new OAuth2Client({
 			clientId: googleConfig.clientID,
 			clientSecret: googleConfig.clientSecret,
-			redirectUri: googleConfig.callbackURL,
 		});
 	}
 

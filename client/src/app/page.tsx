@@ -19,7 +19,7 @@ export default function Home() {
 							Share Your Thoughts Here
 						</h3>
 					</div>
-					<GoogleLogin onSuccess={handleSuccess} />
+					<GoogleLogin useOneTap={true} onSuccess={handleSuccess} />
 				</div>
 			</main>
 		</GoogleOAuthProvider>

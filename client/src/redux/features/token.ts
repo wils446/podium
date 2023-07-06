@@ -14,13 +14,12 @@ export const token = createSlice({
 	initialState,
 	reducers: {
 		setToken: (state, action: PayloadAction<{ token: string }>) => {
-			console.log(1);
-			state.token = action.payload.token;
 			setCookie("jwtToken", action.payload.token);
+			state.token = action.payload.token;
 		},
 		resetToken: (state) => {
-			state.token = null;
 			setCookie("jwtToken", null);
+			state.token = null;
 		},
 	},
 });

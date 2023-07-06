@@ -8,11 +8,6 @@ import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-	title: "Podium",
-	description: "Share Your Thougts Here",
-};
-
 export default function RootLayout({
 	children,
 }: {
@@ -20,6 +15,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<head>
+				<title>Podium</title>
+				<meta name="description" content="Share Your Thoughts Here." />
+			</head>
 			<body className={inter.className}>
 				<Providers>
 					<RequireUser>{children}</RequireUser>

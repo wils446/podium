@@ -1,15 +1,18 @@
 "use client";
 
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useEffect, useState } from "react";
 import { Button } from "../Button";
-import { selectCurrentUserState } from "@/redux/features";
+import { resetToken, selectCurrentUserState } from "@/redux/features";
 import { Input } from "../Input";
 import { useUpdateUser } from "@/hooks";
 import { ColorRing } from "react-loader-spinner";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export const Profile: React.FC = ({}) => {
+	const dispatch = useAppDispatch();
+	const router = useRouter();
 	const { user } = useAppSelector(selectCurrentUserState);
 	const { updateUser, isLoading: isUpdating } = useUpdateUser();
 
@@ -54,7 +57,7 @@ export const Profile: React.FC = ({}) => {
 						</h4>
 					</Link>
 				</div>
-				<div className="mt-10">
+				<div className="mt-10 flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5">
 					<Button
 						size="xl"
 						color="blue-gradient"
@@ -79,6 +82,18 @@ export const Profile: React.FC = ({}) => {
 						) : (
 							"save"
 						)}
+					</Button>
+					<Button
+						size={"xl"}
+						color="dark"
+						buttonType="default"
+						className="text-white"
+						onClick={async () => {
+							await dispatch(resetToken());
+							router.push("/");
+						}}
+					>
+						Logout
 					</Button>
 				</div>
 			</div>

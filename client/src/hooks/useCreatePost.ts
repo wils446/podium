@@ -1,6 +1,7 @@
 import { useCreatePostMutation } from "@/redux/api/postApi";
 import { ICreatePostDto } from "@/redux/interfaces";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export const useCreatePost = () => {
 	const router = useRouter();
@@ -8,10 +9,12 @@ export const useCreatePost = () => {
 		useCreatePostMutation();
 
 	const createPost = async (data: ICreatePostDto) => {
-		const result = await createPostMutation(data);
-
-		if (isSuccess) router.push("/home");
+		await createPostMutation(data);
 	};
+
+	useEffect(() => {
+		if (isSuccess) router.push("/home");
+	}, [isSuccess]);
 
 	return { createPost, isLoading };
 };

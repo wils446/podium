@@ -19,7 +19,7 @@ export const CreatePostForm: React.FC = ({}) => {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<InputForm>();
+	} = useForm<InputForm>({ defaultValues: { isAnonymous: false } });
 	const onSubmit: SubmitHandler<InputForm> = ({
 		content,
 		isAnonymous,
@@ -70,14 +70,14 @@ export const CreatePostForm: React.FC = ({}) => {
 						mobileWidth={"full"}
 						maxHeight={"max"}
 						rows={5}
-						{...register("content", { required: true })}
+						{...register("content")}
 					/>
 				</div>
 				<div className="flex space-x-2 items-center">
 					<label className="text-white">anonymous</label>
 					<Button
 						buttonType="toggle-switch"
-						formProps={register("isAnonymous", { required: true })}
+						formProps={register("isAnonymous")}
 					/>
 				</div>
 			</div>

@@ -19,6 +19,9 @@ module.exports = {
 			dropShadow: {
 				"3xl": "0 25px 25px rgb(0 0 0 / 0.75)",
 			},
+			height: {
+				"d-screen": "100dvh",
+			},
 		},
 	},
 	plugins: [],

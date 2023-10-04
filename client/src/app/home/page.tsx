@@ -13,7 +13,7 @@ export default function Page() {
 	} = useGetRandomPostQuery(null);
 
 	return (
-		<div className="h-screen flex flex-col">
+		<div className="h-d-screen flex flex-col">
 			<Navbar />
 			<div className="w-full flex-grow flex justify-center items-center">
 				<PostBoard refetch={refetch}>
